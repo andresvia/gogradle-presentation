@@ -47,6 +47,6 @@ func TestErrorInDecode(t *testing.T) {
 	defer testServer.Close()
 	_, err := GetJSONWSO2(testServer.URL)
 	if err != ErrorInDecode {
-		t.Fatal(err)
+		t.Fail()
 	}
 }

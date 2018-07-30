@@ -2,5 +2,446 @@
 ---
 apiVersion: "0.10"
 dependencies:
-  build: []
+  build:
+  - urls:
+    - "https://github.com/Knetic/govaluate.git"
+    - "git@github.com:Knetic/govaluate.git"
+    vcs: "git"
+    name: "github.com/Knetic/govaluate"
+    commit: "9aa49832a739dcd78a5542ff189fb82c3e423116"
+    transitive: false
+  - urls:
+    - "https://github.com/Pallinder/go-randomdata.git"
+    - "git@github.com:Pallinder/go-randomdata.git"
+    vcs: "git"
+    name: "github.com/Pallinder/go-randomdata"
+    commit: "15df0648130a623e418886f81b2aaecd0a00547b"
+    transitive: false
+  - urls:
+    - "https://github.com/astaxie/beego.git"
+    - "git@github.com:astaxie/beego.git"
+    vcs: "git"
+    name: "github.com/astaxie/beego"
+    commit: "a09bafbf2ab483742b17bb352f95dbc0a597e720"
+    transitive: false
+  - urls:
+    - "https://github.com/beego/goyaml2.git"
+    - "git@github.com:beego/goyaml2.git"
+    vcs: "git"
+    name: "github.com/beego/goyaml2"
+    commit: "5545475820ddd4db3f90a4900d44b65d077d702d"
+    transitive: false
+  - urls:
+    - "https://github.com/beego/x2j.git"
+    - "git@github.com:beego/x2j.git"
+    vcs: "git"
+    name: "github.com/beego/x2j"
+    commit: "a0352aadc5420072ebe692481a5d6913d77f8cf0"
+    transitive: false
+  - urls:
+    - "https://github.com/belogik/goes.git"
+    - "git@github.com:belogik/goes.git"
+    vcs: "git"
+    name: "github.com/belogik/goes"
+    commit: "e54d722c3aff588e4c737fe11c07359019240824"
+    transitive: false
+  - urls:
+    - "https://github.com/bradfitz/gomemcache.git"
+    - "git@github.com:bradfitz/gomemcache.git"
+    vcs: "git"
+    name: "github.com/bradfitz/gomemcache"
+    commit: "bc664df9673713a0ccf26e3b55a673ec7301088b"
+    transitive: false
+  - urls:
+    - "https://github.com/casbin/casbin.git"
+    - "git@github.com:casbin/casbin.git"
+    vcs: "git"
+    name: "github.com/casbin/casbin"
+    commit: "2523c4a387a417133714e7fec3c4f7bde2c9178b"
+    transitive: false
+  - urls:
+    - "https://github.com/clbanning/x2j.git"
+    - "git@github.com:clbanning/x2j.git"
+    vcs: "git"
+    name: "github.com/clbanning/x2j"
+    commit: "5e605d46809c441eb0e565867b63f7d80c9140c2"
+    transitive: false
+  - urls:
+    - "https://github.com/cloudflare/golz4.git"
+    - "git@github.com:cloudflare/golz4.git"
+    vcs: "git"
+    name: "github.com/cloudflare/golz4"
+    commit: "ef862a3cdc58a6f1fee4e3af3d44fbe279194cde"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbase/cbauth.git"
+    - "git@github.com:couchbase/cbauth.git"
+    vcs: "git"
+    name: "github.com/couchbase/cbauth"
+    commit: "fdb15320725653e21dbbaa12dd68fddfc888a4ab"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbase/clog.git"
+    - "git@github.com:couchbase/clog.git"
+    vcs: "git"
+    name: "github.com/couchbase/clog"
+    commit: "dcae66272b24600ae0005fa06b511cfae8914d3d"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbase/go-couchbase.git"
+    - "git@github.com:couchbase/go-couchbase.git"
+    vcs: "git"
+    name: "github.com/couchbase/go-couchbase"
+    commit: "5a0c9a51996952787fa7d77dc1635661c4369f0c"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbase/go_n1ql.git"
+    - "git@github.com:couchbase/go_n1ql.git"
+    vcs: "git"
+    name: "github.com/couchbase/go_n1ql"
+    commit: "6cf4e348b127e21f56e53eb8c3faaea56afdc588"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbase/gomemcached.git"
+    - "git@github.com:couchbase/gomemcached.git"
+    vcs: "git"
+    name: "github.com/couchbase/gomemcached"
+    commit: "20e69a1ee160444d2663130ce853ac969aec4689"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbase/goutils.git"
+    - "git@github.com:couchbase/goutils.git"
+    vcs: "git"
+    name: "github.com/couchbase/goutils"
+    commit: "e865a1461c8ac0032bd37e2d4dab3289faea3873"
+    transitive: false
+  - urls:
+    - "https://github.com/couchbaselabs/go_n1ql.git"
+    - "git@github.com:couchbaselabs/go_n1ql.git"
+    vcs: "git"
+    name: "github.com/couchbaselabs/go_n1ql"
+    commit: "6cf4e348b127e21f56e53eb8c3faaea56afdc588"
+    transitive: false
+  - name: "github.com/cupcake/rdb"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/cupcake/rdb"
+    transitive: false
+  - name: "github.com/davecgh/go-spew"
+    host:
+      name: "github.com/stretchr/testify"
+      commit: "f35b8ab0b5a2cef36673838d662e249dd9c94686"
+      urls:
+      - "https://github.com/stretchr/testify.git"
+      - "git@github.com:stretchr/testify.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/davecgh/go-spew"
+    transitive: false
+  - name: "github.com/edsrzf/mmap-go"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/edsrzf/mmap-go"
+    transitive: false
+  - urls:
+    - "https://github.com/fatih/structs.git"
+    - "git@github.com:fatih/structs.git"
+    vcs: "git"
+    name: "github.com/fatih/structs"
+    commit: "ebf56d35bba727c68ac77f56f2fcf90b181851aa"
+    transitive: false
+  - name: "github.com/glendc/gopher-json"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/glendc/gopher-json"
+    transitive: false
+  - urls:
+    - "https://github.com/go-redis/redis.git"
+    - "git@github.com:go-redis/redis.git"
+    vcs: "git"
+    name: "github.com/go-redis/redis"
+    commit: "14aebdec9279027d2d629d5a293a0e73449b999e"
+    transitive: false
+  - urls:
+    - "https://github.com/go-sql-driver/mysql.git"
+    - "git@github.com:go-sql-driver/mysql.git"
+    vcs: "git"
+    name: "github.com/go-sql-driver/mysql"
+    commit: "99ff426eb706cffe92ff3d058e168b278cabf7c7"
+    transitive: false
+  - urls:
+    - "https://github.com/gogo/protobuf.git"
+    - "git@github.com:gogo/protobuf.git"
+    vcs: "git"
+    name: "github.com/gogo/protobuf"
+    commit: "646de4defe615515307edb01cfa31b0163afa83a"
+    transitive: false
+  - name: "github.com/golang/snappy"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/golang/snappy"
+    transitive: false
+  - urls:
+    - "https://github.com/gomodule/redigo.git"
+    - "git@github.com:gomodule/redigo.git"
+    vcs: "git"
+    name: "github.com/gomodule/redigo"
+    commit: "2cd21d9966bf7ff9ae091419744f0b3fb0fecace"
+    transitive: false
+  - urls:
+    - "https://github.com/lib/pq.git"
+    - "git@github.com:lib/pq.git"
+    vcs: "git"
+    name: "github.com/lib/pq"
+    commit: "90697d60dd844d5ef6ff15135d0203f65d2f53b8"
+    transitive: false
+  - urls:
+    - "https://github.com/manucorporat/try.git"
+    - "git@github.com:manucorporat/try.git"
+    vcs: "git"
+    name: "github.com/manucorporat/try"
+    commit: "2a0c6b941d52669cec3379e3a77fd2e591f9ef5c"
+    transitive: false
+  - urls:
+    - "https://github.com/mitchellh/mapstructure.git"
+    - "git@github.com:mitchellh/mapstructure.git"
+    vcs: "git"
+    name: "github.com/mitchellh/mapstructure"
+    commit: "f15292f7a699fcc1a38a80977f80a046874ba8ac"
+    transitive: false
+  - urls:
+    - "https://github.com/mndrix/golog.git"
+    - "git@github.com:mndrix/golog.git"
+    vcs: "git"
+    name: "github.com/mndrix/golog"
+    commit: "a28e2a2697753085320289e97116113b30b654db"
+    transitive: false
+  - urls:
+    - "https://github.com/mndrix/ps.git"
+    - "git@github.com:mndrix/ps.git"
+    vcs: "git"
+    name: "github.com/mndrix/ps"
+    commit: "18e65badd6ab498ebf91777d2123a17d5f6b08b6"
+    transitive: false
+  - name: "github.com/pelletier/go-toml"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/pelletier/go-toml"
+    transitive: false
+  - name: "github.com/peterh/liner"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/peterh/liner"
+    transitive: false
+  - urls:
+    - "https://github.com/pkg/errors.git"
+    - "git@github.com:pkg/errors.git"
+    vcs: "git"
+    name: "github.com/pkg/errors"
+    commit: "816c9085562cd7ee03e7f8188a1cfd942858cded"
+    transitive: false
+  - name: "github.com/pmezard/go-difflib"
+    host:
+      name: "github.com/stretchr/testify"
+      commit: "f35b8ab0b5a2cef36673838d662e249dd9c94686"
+      urls:
+      - "https://github.com/stretchr/testify.git"
+      - "git@github.com:stretchr/testify.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/pmezard/go-difflib"
+    transitive: false
+  - name: "github.com/siddontang/go"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/siddontang/go"
+    transitive: false
+  - name: "github.com/siddontang/goredis"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/siddontang/goredis"
+    transitive: false
+  - urls:
+    - "https://github.com/siddontang/ledisdb.git"
+    - "git@github.com:siddontang/ledisdb.git"
+    vcs: "git"
+    name: "github.com/siddontang/ledisdb"
+    commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+    transitive: false
+  - name: "github.com/siddontang/rdb"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/siddontang/rdb"
+    transitive: false
+  - urls:
+    - "https://github.com/ssdb/gossdb.git"
+    - "git@github.com:ssdb/gossdb.git"
+    vcs: "git"
+    name: "github.com/ssdb/gossdb"
+    commit: "88f6b59b84ece096894b780e7c17b54e1301cd5b"
+    transitive: false
+  - name: "github.com/stretchr/objx"
+    host:
+      name: "github.com/stretchr/testify"
+      commit: "f35b8ab0b5a2cef36673838d662e249dd9c94686"
+      urls:
+      - "https://github.com/stretchr/testify.git"
+      - "git@github.com:stretchr/testify.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/stretchr/objx"
+    transitive: false
+  - urls:
+    - "https://github.com/stretchr/testify.git"
+    - "git@github.com:stretchr/testify.git"
+    vcs: "git"
+    name: "github.com/stretchr/testify"
+    commit: "f35b8ab0b5a2cef36673838d662e249dd9c94686"
+    transitive: false
+  - name: "github.com/syndtr/goleveldb"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/syndtr/goleveldb"
+    transitive: false
+  - urls:
+    - "https://github.com/udistrital/administrativa_mid_api.git"
+    - "git@github.com:udistrital/administrativa_mid_api.git"
+    vcs: "git"
+    name: "github.com/udistrital/administrativa_mid_api"
+    commit: "173b9dd9a07832ad7b6677c7c2d77a86783e41a0"
+    transitive: false
+  - urls:
+    - "https://github.com/udistrital/api_financiera.git"
+    - "git@github.com:udistrital/api_financiera.git"
+    vcs: "git"
+    name: "github.com/udistrital/api_financiera"
+    commit: "fdee2f6af2660cde7ed6292ceab51473949eec37"
+    transitive: false
+  - urls:
+    - "https://github.com/udistrital/api_mid_financiera.git"
+    - "git@github.com:udistrital/api_mid_financiera.git"
+    vcs: "git"
+    name: "github.com/udistrital/api_mid_financiera"
+    commit: "83a2a37f53b494e35a3ddade5fff5a637a395177"
+    transitive: false
+  - urls:
+    - "https://github.com/udistrital/golog.git"
+    - "git@github.com:udistrital/golog.git"
+    vcs: "git"
+    name: "github.com/udistrital/golog"
+    commit: "91dc4aca08d28c403afae158975e69bd525ec1ef"
+    transitive: false
+  - urls:
+    - "https://github.com/udistrital/ss_crud_api.git"
+    - "git@github.com:udistrital/ss_crud_api.git"
+    vcs: "git"
+    name: "github.com/udistrital/ss_crud_api"
+    commit: "c821e21e5cdbf1fd4e53128e2147ec931f3c81ee"
+    transitive: false
+  - urls:
+    - "https://github.com/udistrital/utils_oas.git"
+    - "git@github.com:udistrital/utils_oas.git"
+    vcs: "git"
+    name: "github.com/udistrital/utils_oas"
+    commit: "808d161cc39523b84f9684e07e38bdea8ae66565"
+    transitive: false
+  - name: "github.com/ugorji/go"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/ugorji/go"
+    transitive: false
+  - urls:
+    - "https://github.com/wendal/errors.git"
+    - "git@github.com:wendal/errors.git"
+    vcs: "git"
+    name: "github.com/wendal/errors"
+    commit: "f66c77a7882b399795a8987ebf87ef64a427417e"
+    transitive: false
+  - name: "github.com/yuin/gopher-lua"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/github.com/yuin/gopher-lua"
+    transitive: false
+  - vcs: "git"
+    name: "golang.org/x/crypto"
+    commit: "c126467f60eb25f8f27e5a981f32a87e3965053f"
+    url: "https://go.googlesource.com/crypto"
+    transitive: false
+  - name: "golang.org/x/net"
+    host:
+      name: "github.com/siddontang/ledisdb"
+      commit: "d2af45e3fbd3a6b59e435e24ddd6b8118bd08b2b"
+      urls:
+      - "https://github.com/siddontang/ledisdb.git"
+      - "git@github.com:siddontang/ledisdb.git"
+      vcs: "git"
+    vendorPath: "vendor/golang.org/x/net"
+    transitive: false
+  - vcs: "git"
+    name: "golang.org/x/sys"
+    commit: "bd9dbc187b6e1dacfdd2722a87e83093c2d7bd6e"
+    url: "https://go.googlesource.com/sys"
+    transitive: false
+  - vcs: "git"
+    name: "gopkg.in/yaml.v2"
+    commit: "5420a8b6744d3b0345ab293f6fcba19c978f1183"
+    url: "https://gopkg.in/yaml.v2"
+    transitive: false
   test: []
