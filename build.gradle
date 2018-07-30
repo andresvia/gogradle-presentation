@@ -1,0 +1,20 @@
+plugins {
+  id "com.github.blindpirate.gogradle" version "0.10"
+}
+
+golang {
+  // https://golang.org/doc/devel/release.html#go1.10
+  goVersion = "1.10.3"
+  packagePath = "github.com/udistrital/${rootProject.name}"
+}
+
+// please install golint
+task golint(type: com.github.blindpirate.gogradle.Go){
+    run("golint -set_exit_status ${golang.packagePath}")
+}
+
+check.dependsOn vet
+check.dependsOn golint
+
+build.dependsOn check
+build.dependsOn cover
