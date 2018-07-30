@@ -9,11 +9,11 @@ import (
 
 var (
 	// ErrorInURL the URL was malformed
-	ErrorInURL = errors.New("Error in URL")
+	ErrorInURL = errors.New("In URL")
 	// ErrorInRequest the request failed
-	ErrorInRequest = errors.New("Error in request")
+	ErrorInRequest = errors.New("In request")
 	// ErrorInDecode response not decoded into a map[string]interface{}
-	ErrorInDecode = errors.New("Error in decode")
+	ErrorInDecode = errors.New("In decode")
 )
 
 // GetJSONWSO2 get JSON as `response` from `URL`

@@ -2,50 +2,61 @@ package gogradlepresentation
 
 import (
 	"encoding/json"
+	"github.com/astaxie/beego/config"
 	"github.com/udistrital/administrativa_mid_api/models"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
 	"testing"
-	"fmt"
 )
 
 func TestObtenerInfoCoordinador(t *testing.T) {
-	attribute := "attribute1"
-	value := "value1"
 	mockedResponses := [][]byte{}
 	response := []byte{}
 	bytes, _ := json.Marshal(models.ObjetoProyectoCurricular{})
 	mockedResponses = append(mockedResponses, bytes)
-	bytes, _ = json.Marshal(map[string]string{attribute: value})
+	bytes, _ = json.Marshal(models.InformacionCoordinador{})
 	mockedResponses = append(mockedResponses, bytes)
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		response, mockedResponses = mockedResponses[0], mockedResponses[1:]
 		w.Write(response)
 	}))
 	defer testServer.Close()
-	serverResponse, err := ObtenerInfoCoordinador(testServer.URL, testServer.URL+"/%s")
+	config := config.NewFakeConfig()
+	testServerURL, _ := url.Parse(testServer.URL)
+	config.Set(beegoSettingURLCRUDWSO2, testServerURL.Host)
+	_, err := ObtenerInfoCoordinador("", config)
 	if err != nil {
 		t.Fatal(err)
 	}
-	attributeValue := serverResponse[attribute].(string)
-	if attributeValue != value {
+}
+
+func TestErrorObtenerInformacionCoordinador(t *testing.T) {
+	config := config.NewFakeConfig()
+	config.Set(beegoSettingURLCRUDWSO2, " not a host ")
+	_, err := ObtenerInfoCoordinador("", config)
+	if err != ErrorObtenerInformacionCoordinador {
 		t.Fail()
 	}
 }
 
-func TestErrorObtenerInformacionProyectoCurricular(t *testing.T) {
-	_, err := ObtenerInfoCoordinador("hxxt:// not a url /", "hxxt:// not a url /")
-	if err != ErrorObtenerInformacionProyectoCurricular {
-		t.Fail()
-	}
-}
-
-func TestErrorModeloProyectoCurricular(t *testing.T) {
+func TestErrorErrorModeloCoordinador(t *testing.T) {
+	mockedResponses := [][]byte{}
+	response := []byte{}
+	bytes, _ := json.Marshal(models.ObjetoProyectoCurricular{})
+	mockedResponses = append(mockedResponses, bytes)
+	bytes, _ = json.Marshal(map[string]string{"CarreraSniesCollection": "bad map"})
+	mockedResponses = append(mockedResponses, bytes)
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, `{"Homologacion":"bad map"}`)
+		response, mockedResponses = mockedResponses[0], mockedResponses[1:]
+		w.Write(response)
 	}))
-	_, err := ObtenerInfoCoordinador(testServer.URL, testServer.URL + "/%s")
-	if err != ErrorModeloProyectoCurricular {
+	defer testServer.Close()
+	config := config.NewFakeConfig()
+	testServerURL, _ := url.Parse(testServer.URL)
+	config.Set(beegoSettingURLCRUDWSO2, testServerURL.Host)
+	_, err := ObtenerInfoCoordinador("", config)
+	if err != ErrorModeloCoordinador {
 		t.Fail()
 	}
 }

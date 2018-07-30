@@ -3,31 +3,40 @@ package gogradlepresentation
 import (
 	"errors"
 	"fmt"
+	"github.com/astaxie/beego/config"
 	"github.com/mitchellh/mapstructure"
 	"github.com/udistrital/administrativa_mid_api/models"
 	"log"
 )
 
-var (
-	// ErrorObtenerInformacionProyectoCurricular al obtener proyecto curricular
-	ErrorObtenerInformacionProyectoCurricular = errors.New("Obteniendo información de proyecto curricular")
-	// ErrorModeloProyectoCurricular al mapear respuesta a modelo
-	ErrorModeloProyectoCurricular = errors.New("En el modelo del proyecto curricular")
-	// ErrorObtenerInformacionCoordinador = errors.New("Obteniendo información de coordinador")
+const (
+	beegoSettingURLCRUDWSO2        = "UrlcrudWSO2"
+	beegoSettingNSCRUDHomologacion = "NscrudHomologacion"
+	beegoSettingNSCRUDAcademica    = "NscrudAcademica"
 )
 
-// ObtenerInfoCoordinador en dos pasos, primero dependencia, luego carrera
-func ObtenerInfoCoordinador(urlIDDependenciaOikos, urlCarreraSniesFmt string) (response map[string]interface{}, err error) {
-	if response, err = GetJSONWSO2(urlIDDependenciaOikos); err != nil {
+var (
+	// ErrorObtenerInformacionCoordinador al obtener coordinador
+	ErrorObtenerInformacionCoordinador = errors.New("Obteniendo información de coordinador")
+	// ErrorModeloCoordinador al mapear respuesta a modelo
+	ErrorModeloCoordinador = errors.New("Modelo de coordinador")
+)
+
+// ObtenerInfoCoordinador obtain info or fail
+func ObtenerInfoCoordinador(idDependenciaOikos string, beegoConfiger config.Configer) (response models.InformacionCoordinador, err error) {
+	// beegoConfiger = beego.AppConfig
+	var apiResponse map[string]interface{}
+	// protocol should not be hardcoded in http://
+	urlIDDependenciaOikos := fmt.Sprintf("http://%s/%s/proyecto_curricular_oikos/%s", beegoConfiger.String(beegoSettingURLCRUDWSO2), beegoConfiger.String(beegoSettingNSCRUDHomologacion), idDependenciaOikos)
+	urlCarreraSniesFmt := fmt.Sprintf("http://%s/%s/carrera_snies/%%s", beegoConfiger.String(beegoSettingURLCRUDWSO2), beegoConfiger.String(beegoSettingNSCRUDAcademica))
+	if apiResponse, err = ObtenerInformacionCoordinador(urlIDDependenciaOikos, urlCarreraSniesFmt); err != nil {
 		log.Print(err)
-		return nil, ErrorObtenerInformacionProyectoCurricular
+		return response, ErrorObtenerInformacionCoordinador
 	}
-	var proyectoCurricular models.ObjetoProyectoCurricular
-	err = mapstructure.Decode(response, &proyectoCurricular)
+	err = mapstructure.Decode(apiResponse, &response)
 	if err != nil {
 		log.Print(err)
-		return nil, ErrorModeloProyectoCurricular
+		return response, ErrorModeloCoordinador
 	}
-	urlIDProyectoSnies := fmt.Sprintf(urlCarreraSniesFmt, proyectoCurricular.Homologacion.IDSnies)
-	return GetJSONWSO2(urlIDProyectoSnies)
+	return response, nil
 }
