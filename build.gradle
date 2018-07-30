@@ -9,6 +9,7 @@ golang {
 }
 
 // please install golint
+// go get golang.org/x/lint/golint
 task golint(type: com.github.blindpirate.gogradle.Go){
     run("golint -set_exit_status ${golang.packagePath}")
 }
